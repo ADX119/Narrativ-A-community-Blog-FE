@@ -1,33 +1,31 @@
 import { Link } from "react-router-dom";
 import MainCategories from "../components/MainCategories";
-import FeaturedPost from "../components/FeaturedPost";
+import FeaturedPosts from "../components/FeaturedPosts";
 import PostList from "../components/PostList";
 
-function Homepage() {
+const Homepage = () => {
   return (
-    <div className="mt-4 flex flex-col gap-4 over">
-      {/*BREADCRUMS*/}
-      <div className="flex gap-4">
+    <div className="mt-4 flex flex-col gap-4">
+      {/* BREADCRUMB */}
+      <div className="flex gap-4 font-semibold">
         <Link to="/">Home</Link>
-        <span>.</span>
-        <span className="text-blue-800">Blogs and Articles</span>
+        <span>•</span>
+        <span className="text-[#1F3A6F] font-semibold">Blogs and Articles</span>
       </div>
-      {/*INTRODUCTION*/}
-      <div className="flex items-center justify-center">
-        {/*title*/}
+      {/* INTRODUCTION */}
+      <div className="flex items-center justify-between">
+        {/* titles */}
         <div className="">
           <h1 className="text-gray-800 text-xl md:text-2xl lg:text-4xl font-bold">
-            Lorem ipsum, dolor sit amet consectetur
+            Unfold the narrative within.
           </h1>
-          <p className="mt-4 text-md md:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+          <p className="mt-6 text-md md:text-xl">
+            When ideas are shared, they grow. Like a lamp lighting another,
+            wisdom only increases
           </p>
         </div>
-        {/*animated button*/}
-        <Link
-          to="write"
-          className="hidden md:block relative mx-40"
-        >
+        {/* animated button */}
+        <Link to="write" className="hidden md:block relative mx-40">
           <svg
             className="text-lg tracking-widest animate-spin ml-40"
             viewBox="0 0 200 200"
@@ -48,7 +46,7 @@ function Homepage() {
               </textPath>
             </text>
           </svg>
-          <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-blue-800 rounded-full flex items-center justify-center ml-20">
+          <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-[#1F3A6F] rounded-full flex items-center justify-center ml-20">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -65,18 +63,16 @@ function Homepage() {
         </Link>
       </div>
       {/* CATEGORIES */}
-      <MainCategories/>
-      {/*FEATURED POSTS*/}
-      <FeaturedPost/>
-      {/*POST LIST(INFINITE SCROLL)*/}
+      <MainCategories />
+      {/* FEATURED POSTS */}
+      <FeaturedPosts />
+      {/* POST LIST */}
       <div className="">
-        <h1 className="my-8 text-2xl text-gray-600">
-          Recent Posts
-        </h1>
-        <PostList/>
+        <h1 className="my-8 text-2xl text-gray-600 font-medium">Recent Posts</h1>
+        <PostList />
       </div>
     </div>
   );
-}
+};
 
 export default Homepage;

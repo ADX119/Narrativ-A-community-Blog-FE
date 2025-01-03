@@ -23,3 +23,11 @@ body{
     border:none !important;
 
 }
+/* Hide Locomotive Scroll's custom scrollbar */
+.c-scrollbar {
+    display: none !important;
+}
+
+.c-scrollbar_thumb {
+    display: none !important;
+}

@@ -1,10 +1,10 @@
 import { IKImage } from "imagekitio-react";
 
-function Image({ src, className, w, h, alt }) {
+const Image = ({ src, className, w, h, alt }) => {
   return (
     <IKImage
-      urlEndpoint={import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT}
-      path={src} // Ensure src is a string path
+      urlEndpoint={import.meta.env.VITE_IK_URL_ENDPOINT}
+      path={src}
       className={className}
       loading="lazy"
       lqip={{ active: true, quality: 20 }}
@@ -12,14 +12,13 @@ function Image({ src, className, w, h, alt }) {
       width={w}
       height={h}
       transformation={[
-       {
-        width :w,
-        height : h
-       }
-        
+        {
+          width: w,
+          height: h,
+        },
       ]}
     />
   );
-}
+};
 
 export default Image;
